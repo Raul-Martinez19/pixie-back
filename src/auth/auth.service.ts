@@ -17,11 +17,13 @@ export class AuthService {
   constructor(
     private readonly jwtService: JwtService,
     private readonly userService: UserService,
-  ) {}
+  ) { }
 
   async register(
     createUserDto: CreateUserDto,
   ): Promise<{ access_token: string; user: Partial<User> }> {
+    console.log('Datos de registro recibidos:', createUserDto);
+    console.log('Registrando nuevo usuario: ', createUserDto.username);
     this.logger.log(` Registrando nuevo usuario: ${createUserDto.username}`);
 
     const user = await this.userService.createUser(createUserDto);

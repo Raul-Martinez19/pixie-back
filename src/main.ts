@@ -74,15 +74,7 @@ async function bootstrap() {
 
   // CORS
   app.enableCors({
-    origin: [
-      'http://localhost:5173',
-      'http://localhost:5180',
-      'http://localhost:5181',
-      'http://localhost:5182',
-      'http://localhost:3000',
-      'http://localhost:3001',
-      'http://localhost:3002',
-    ],
+    origin: ['https://pixie-front-7ykr.onrender.com'],
     credentials: true,
   });
 
