@@ -19,6 +19,7 @@ export class AuthController {
   @Post('register')
   async register(@Body() createUserDto: CreateUserDto) {
     try {
+      console.log('Datos de registro recibidos:', createUserDto);
       this.logger.log(` Registering user: ${createUserDto.username}`);
 
       if (
