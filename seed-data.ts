@@ -30,7 +30,6 @@ const tierraUsers = [
   {
     id: '1',
     username: 'raul',
-    full_handle: 'raul@planeta-tierra',
     email: 'raul@tierra.com',
     created_at: new Date().toISOString(),
     bio: 'Explorador de Tierra ',
@@ -42,7 +41,6 @@ const tierraUsers = [
   {
     id: '2',
     username: 'alice',
-    full_handle: 'alice@planeta-tierra',
     email: 'alice@tierra.com',
     created_at: new Date(Date.now() - 86400000).toISOString(),
     bio: 'Ingeniera y científica 🔬',
@@ -54,7 +52,6 @@ const tierraUsers = [
   {
     id: '3',
     username: 'bob',
-    full_handle: 'bob@planeta-tierra',
     email: 'bob@tierra.com',
     created_at: new Date(Date.now() - 172800000).toISOString(),
     bio: 'Fotografo viajero 📸',
@@ -66,7 +63,6 @@ const tierraUsers = [
   {
     id: '4',
     username: 'carlos',
-    full_handle: 'carlos@planeta-tierra',
     email: 'carlos@tierra.com',
     created_at: new Date(Date.now() - 259200000).toISOString(),
     bio: 'Desarrollador full-stack 💻',
@@ -81,7 +77,6 @@ const marteUsers = [
   {
     id: '1',
     username: 'ares',
-    full_handle: 'ares@planeta-marte',
     email: 'ares@marte.com',
     created_at: new Date().toISOString(),
     bio: 'Colono de la primera generación marciana',
@@ -93,7 +88,6 @@ const marteUsers = [
   {
     id: '2',
     username: 'nova',
-    full_handle: 'nova@planeta-marte',
     email: 'nova@marte.com',
     created_at: new Date(Date.now() - 86400000).toISOString(),
     bio: 'Geóloga marciana y exploradora de cráteres',
@@ -105,7 +99,6 @@ const marteUsers = [
   {
     id: '3',
     username: 'sol',
-    full_handle: 'sol@planeta-marte',
     email: 'sol@marte.com',
     created_at: new Date(Date.now() - 172800000).toISOString(),
     bio: 'Ingeniero de terraformación 🔧',
@@ -117,7 +110,6 @@ const marteUsers = [
   {
     id: '4',
     username: 'lyra',
-    full_handle: 'lyra@planeta-marte',
     email: 'lyra@marte.com',
     created_at: new Date(Date.now() - 259200000).toISOString(),
     bio: 'Astrónoma y fotógrafa del cielo marciano 🌌',
@@ -325,7 +317,6 @@ async function seedData() {
         `CREATE (u:User {
           id: $id,
           username: $username,
-          full_handle: $fullHandle,
           email: $email,
           password: $password,
           created_at: $createdAt,
@@ -337,7 +328,6 @@ async function seedData() {
         {
           id: user.id,
           username: user.username,
-          fullHandle: user.full_handle,
           email: user.email,
           password: hashedPassword,
           createdAt: user.created_at,
