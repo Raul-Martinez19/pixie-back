@@ -38,7 +38,6 @@ describe('AuthService', () => {
       mockUserService.createUser.mockResolvedValue({
         id: 'user-1',
         username: 'alice',
-        full_handle: 'alice@local',
         password: 'hashed-secret',
       });
 
@@ -53,7 +52,7 @@ describe('AuthService', () => {
 
   describe('validateAndLogin()', () => {
     it('should return a token when credentials are valid', async () => {
-      const user = { id: 'user-1', username: 'alice', full_handle: 'alice@local' };
+      const user = { id: 'user-1', username: 'alice' };
       mockUserService.validateUser.mockResolvedValue(user);
 
       const result = await service.validateAndLogin('alice', 'secret');

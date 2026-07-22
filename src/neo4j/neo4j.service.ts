@@ -12,12 +12,13 @@ export class Neo4jService implements OnModuleInit, OnModuleDestroy {
   private driver!: Driver;
   private readonly logger = new Logger(Neo4jService.name);
 
-  constructor(private readonly configService: ConfigService) {}
+  constructor(private readonly configService: ConfigService) { }
 
   // Se ejecuta cuando el módulo se inicializa
   async onModuleInit() {
     const uri =
       this.configService.get<string>('NEO4J_URI') || 'bolt://localhost:7687';
+    this.logger.warn(`--- URI REAL QUE SE ESTÁ USANDO: ${uri} ---`);
     const username =
       this.configService.get<string>('NEO4J_USERNAME') || 'neo4j';
     const password =
